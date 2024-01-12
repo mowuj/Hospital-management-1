@@ -1,5 +1,6 @@
 const getparams = () => {
     const param = new URLSearchParams(window.location.search).get("doctorId");
+    loadTime(param)
     fetch(`https://testing-8az5.onrender.com/doctor/list/${param}`)
       .then((res) => res.json())
         .then((data) => displayDetails(data));
@@ -8,7 +9,9 @@ const getparams = () => {
       `https://testing-8az5.onrender.com/doctor/review/?doctor_id=${param}`
     )
       .then((res) => res.json())
-      .then((data) => doctorReview(data));
+        .then((data) => doctorReview(data));
+    
+    
 };
 const doctorReview = (reviews) => {
   reviews.forEach((review) => {
@@ -44,11 +47,55 @@ const displayDetails = (doctor) => {
              
             <p class="w-50">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea minus doloremque, quaerat debitis alias cum?</p>
             <h4>Fees: ${doctor.fee}</h4>
-            <button>Take Appointment</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Take Appointment
+</button>
 
         </div>
     `;
     parent.appendChild(div)
+}
+
+const loadTime = (id) => {
+    fetch(`https://testing-8az5.onrender.com/doctor/availabletime/?doctor_id=${id}`)
+    .then(res=>res.json())
+        .then((data) => {
+            data.forEach((item) => {
+              const parent = document.getElementById("time-container");
+              const option = document.createElement("option");
+              option.value = item.id;
+              option.innerText = item.name;
+              parent.appendChild(option);
+            });
+    })
+
+}
+
+const handleAppointment = () => {
+    const param = new URLSearchParams(window.location.search).get("doctorId");
+    const status = document.getElementsByName("status");
+    const selected = Array.from(status).find((button) => button.checked);
+    const symptom = document.getElementById("symptom").value;
+    const time = document.getElementById("time-container")
+    const selectedTime = time.options[time.selectedIndex];
+    console.log(selected.value);
+    const info = {
+        appointment_type: selected.value,
+        appointment_status: "Pending",
+        time: selectedTime.value,
+        symptom: symptom,
+        cancel: false,
+        patient:1,
+        doctor: param,
+    };
+
+    fetch("https://testing-8az5.onrender.com/appointment/", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(info),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
 }
 
 getparams();
