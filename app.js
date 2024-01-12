@@ -45,28 +45,35 @@ const loadDoctors = (search) => {
 }
 
 const displayDoctors = (doctors) => {
-    doctors?.forEach((doctor) => {
-        const parent=document.getElementById("doctors")
-        const div = document.createElement("div");
-        div.classList.add("doc-card");
-        div.innerHTML = `
-        <img class="doc-img" src="${doctor.image}" alt="" />
+  doctors?.forEach((doctor) => {
+    // console.log(doctor);
+    const parent = document.getElementById("doctors");
+    const div = document.createElement("div");
+    div.classList.add("doc-card");
+    div.innerHTML = `
+        <img class="doc-img" src=${doctor.image} alt="" />
               <h4>${doctor?.full_name}</h4>
               <h6>${doctor?.designation[0]}</h6>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Facilis, reprehenderit!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+                numquam!
               </p>
+             
               <p>
-              ${doctor.specialization?.map((item) => {
-                  return `<button>${item}</button>`
-              }) }
+              
+              ${doctor?.specialization?.map((item) => {
+                return `<button>${item}</button>`;
+              })}
               </p>
-              <button>Details</button> `;
-        parent.appendChild(div)
-    })
-}
 
+              <button > <a target="_blank" href="docDetails.html?doctorId=${
+                doctor.id
+              }">Details</a> </button>
+        `;
+
+    parent.appendChild(div);
+  });
+};
 const loadDesignation = () => {
     fetch("https://testing-8az5.onrender.com/doctor/designation/")
         .then(res=>res.json())
