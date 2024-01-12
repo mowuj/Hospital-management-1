@@ -77,3 +77,21 @@ nav{
 #spinner{
     display: none;
 }
+.review-card{
+    width: 250px;
+    height: 300px;
+    box-shadow: 4px 4px 8px gray;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+.review-card img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+}
+
+footer{
+    padding: 50px;
+    background: linear-gradient(66deg,#1CA8C7 -5.35%,#439FA5 46.76%,#4C7D8C 98.77%);
+}
