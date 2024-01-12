@@ -1,0 +1,49 @@
+body{
+    /* width: 1200px; */
+    margin: auto;
+}
+
+li{
+    list-style: none;
+}
+nav{
+    background-color: aqua;
+}
+.menu{
+    font-size: 20px;
+}
+.menu:hover{
+    color: white;
+    cursor: pointer;
+}
+.banner-container{
+    width: 1200px;
+    height: 500px;
+    margin: auto;
+    padding: 30px;
+    margin-bottom: 60px;
+}
+.banner{
+    height: 450px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background:linear-gradient(cyan,rgb(33, 137, 137));
+    box-shadow: 4px 4px 8px gray;
+    border-radius: 10px;
+}
+.bn-img{
+    width: 325px;
+    margin-top:-50px ;
+}
+.service-container{
+    margin-top: 30px;
+    width: 1200px;
+    margin: auto;
+}
+.title{
+    font-size: 44px;
+    color: aqua;
+    text-align: center;
+}
