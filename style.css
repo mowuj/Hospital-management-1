@@ -1,6 +1,7 @@
 body{
     /* width: 1200px; */
     margin: auto;
+    background-color: rgb(241,234,234);
 }
 
 li{
@@ -21,7 +22,7 @@ nav{
     height: 500px;
     margin: auto;
     padding: 30px;
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
 }
 .banner{
     height: 450px;
@@ -41,9 +42,38 @@ nav{
     margin-top: 30px;
     width: 1200px;
     margin: auto;
+    margin-top: 70px;
 }
 .title{
     font-size: 44px;
     color: aqua;
     text-align: center;
+}
+.doctors-container{
+    margin-top: 50px;
+    padding: 30px;
+}
+.doc-card{
+    width: 300px;
+    height: 360px;
+    box-shadow: 4px 4px 8px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+}
+.doc-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+#search{
+    padding: 10px;
+    width: 75%;
+    border: none;
+}
+.nodata{
+    display: none;
+}
+#spinner{
+    display: none;
 }
