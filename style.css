@@ -115,3 +115,7 @@ footer{
     color: white;
     border-radius: 5px;
 }
+
+.user-details-container{
+    height: 100vh;
+}

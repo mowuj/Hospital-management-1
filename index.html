@@ -29,7 +29,23 @@
           <li class="menu"><a href="index.html">Home</a></li>
           <li class="menu">Services</li>
           <li class="menu">Contact us</li>
-          <li class="menu"> <a target="_blank" href="login.html">Login</a> </li>
+          <li class="menu"><a target="_blank" href="login.html">Login</a></li>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Profile
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item active" href="userDetails.html">Profile</a></li>
+              <li><a class="dropdown-item" href="allAppointments.html">All Appointment</a></li>
+              
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
         </div>
       </nav>
 
@@ -101,9 +117,7 @@
             >
               Designation
             </button>
-            <ul id="drop-deg" class="dropdown-menu dropdown-menu-dark">
-              
-            </ul>
+            <ul id="drop-deg" class="dropdown-menu dropdown-menu-dark"></ul>
           </div>
           <div class="dropdown">
             <button
@@ -114,19 +128,15 @@
             >
               Specialization
             </button>
-            <ul id="drop-spe" class="dropdown-menu dropdown-menu-dark">
-              
-            </ul>
+            <ul id="drop-spe" class="dropdown-menu dropdown-menu-dark"></ul>
           </div>
         </div>
         <div class="col-md-8">
           <input id="search" type="text" placeholder="search..." />
           <button onclick="handleSearch()">Search</button>
-          <div id="doctors" class="doctors mt-5">
-            
-          </div>
+          <div id="doctors" class="doctors mt-5"></div>
           <div id="nodata" class="nodata">
-            <img src="./images/nodata.png" alt="">
+            <img src="./images/nodata.png" alt="" />
           </div>
           <div id="spinner" class="loading text-center">
             <h4>loading....</h4>
@@ -137,71 +147,65 @@
       <!-- all reviews  -->
       <div class="review-container p-3 mt-5 w-75 m-auto">
         <h1 class="title">Clients Reviews about us</h1>
-        <p class="description text-center w-50 m-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Ducimus, sit?Lorem ipsum dolor sit amet.</p>
+        <p class="description text-center w-50 m-auto">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+          Ducimus, sit?Lorem ipsum dolor sit amet.
+        </p>
 
         <div class="reviews">
           <div
-          class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein slider-item-first-visible"
-        >
-          <ul id="review-container" class="slider-container py-4"></ul>
+            class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein slider-item-first-visible"
+          >
+            <ul id="review-container" class="slider-container py-4"></ul>
 
-          <button
-            type="button"
-            class="slider-nav"
-            aria-label="Go left"
-          ></button>
-          <button
-            type="button"
-            class="slider-nav slider-nav-next"
-            aria-label="Go left"
-          ></button>
+            <button
+              type="button"
+              class="slider-nav"
+              aria-label="Go left"
+            ></button>
+            <button
+              type="button"
+              class="slider-nav slider-nav-next"
+              aria-label="Go left"
+            ></button>
 
-          <div class="slider-indicators">
-            <button class="active" aria-label="Go to slide"></button>
-            <button aria-label="Go to slide"></button>
-            <button aria-label="Go to slide"></button>
-            <button aria-label="Go to slide"></button>
-            <button aria-label="Go to slide"></button>
+            <div class="slider-indicators">
+              <button class="active" aria-label="Go to slide"></button>
+              <button aria-label="Go to slide"></button>
+              <button aria-label="Go to slide"></button>
+              <button aria-label="Go to slide"></button>
+              <button aria-label="Go to slide"></button>
+            </div>
           </div>
-        </div>
-
-
-          <!-- <div class="review-card">
-            <img src="./images/girl.png" alt="">
-            <h4>Reviewer</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At dicta quas nesciunt nam aspernatur velit voluptatum, ipsam id. Autem, doloribus.</p>
-            <h6>*****</h6>
-          </div> -->
         </div>
       </div>
     </main>
     <footer class="p-5">
       <div class="container row w-75 m-auto p-5">
         <div class="col-md-6">
-        <p><small>Copyright @ Smartcare. All Rights Reserved</small></p>
-        <h5>Follow US</h5>
-        <div class="icons">
-          <img class="icon" src="./images/LinkedIn.png" alt="">
-          <img class="icon" src="./images/YouTube.png" alt="">
-          <img class="icon" src="./images/LinkedIn.png" alt="">
+          <p><small>Copyright @ Smartcare. All Rights Reserved</small></p>
+          <h5>Follow US</h5>
+          <div class="icons">
+            <img class="icon" src="./images/LinkedIn.png" alt="" />
+            <img class="icon" src="./images/YouTube.png" alt="" />
+            <img class="icon" src="./images/LinkedIn.png" alt="" />
+          </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <h5>Company</h5>
-        <li>About</li>
-        <li>Contact us</li>
-        <li>Culture</li>
-        <li>Blog</li>
-      </div>
-      <div class="col-md-3 mb-5">
-        <h5>Company</h5>
-        <li>About</li>
-        <li>Contact us</li>
-        <li>Culture</li>
-        <li>Blog</li>
-        
-      </div>
-      <hr>
+        <div class="col-md-3">
+          <h5>Company</h5>
+          <li>About</li>
+          <li>Contact us</li>
+          <li>Culture</li>
+          <li>Blog</li>
+        </div>
+        <div class="col-md-3 mb-5">
+          <h5>Company</h5>
+          <li>About</li>
+          <li>Contact us</li>
+          <li>Culture</li>
+          <li>Blog</li>
+        </div>
+        <hr />
         <p class="text-center mt-3">
           <small>Copyright @ Smartcare. All Rights Reserved</small>
         </p>
