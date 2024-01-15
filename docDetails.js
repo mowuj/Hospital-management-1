@@ -77,16 +77,17 @@ const handleAppointment = () => {
     const selected = Array.from(status).find((button) => button.checked);
     const symptom = document.getElementById("symptom").value;
     const time = document.getElementById("time-container")
-    const selectedTime = time.options[time.selectedIndex];
+  const selectedTime = time.options[time.selectedIndex];
+  const patient_id = localStorage.getItem("patient_id");
     console.log(selected.value);
     const info = {
-        appointment_type: selected.value,
-        appointment_status: "Pending",
-        time: selectedTime.value,
-        symptom: symptom,
-        cancel: false,
-        patient:1,
-        doctor: param,
+      appointment_type: selected.value,
+      appointment_status: "Pending",
+      time: selectedTime.value,
+      symptom: symptom,
+      cancel: false,
+      patient: patient_id,
+      doctor: param,
     };
 
     fetch("https://testing-8az5.onrender.com/appointment/", {
@@ -95,7 +96,21 @@ const handleAppointment = () => {
       body: JSON.stringify(info),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        window.location.href=`pdf.html?doctorId=${param}`
+        // console.log(data);
+      });
 }
 
+const loadPatientId = () => {
+  const user_id = localStorage.getItem("user_id");
+  fetch(`https://testing-8az5.onrender.com/patient/list/?user_id=${user_id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      localStorage.setItem("patient_id", data[0].id);
+    });
+};
+
+
+loadPatientId()
 getparams();
